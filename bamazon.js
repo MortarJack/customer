@@ -42,7 +42,7 @@ var bamazon = function() {
 var stockQuantity = function(item, quantity){
 console.log(item);
 console.log(quantity);
-  connection.query('select * from bamazon where ?', { item_id: item }, function(err,results) {
+  connection.query('select * from bamazon where ?', { product_name: item }, function(err,results) {
     if (err) throw err;
     console.log(results);
     
@@ -65,6 +65,7 @@ console.log(quantity);
         }
       ],
       function(err, res) {
+        
         console.log("Product purchased!\n");
         console.log("$" + (quantity * stockData.price));
       }
